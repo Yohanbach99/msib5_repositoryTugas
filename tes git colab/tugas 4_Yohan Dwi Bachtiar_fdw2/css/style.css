@@ -1,0 +1,63 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+/*tabel pertama*/
+.th0 {
+    background-color: #3498db;
+    color: #fff; 
+    text-align: center;
+}
+
+.tr0 {
+    background-color: #3498db;
+    color: #fff; 
+    text-align: center;
+}
+
+/*tabel Kedua*/
+.th1 {
+    background-color: #50ff2d;
+    color: #fff; 
+    text-align: center;
+}
+
+.td1 {
+    background-color: #50ff2d;
+    color: #fff; 
+    text-align: center;
+}
+
+/*tabel Ketiga*/
+.th2 {
+    background-color: #fe3939;
+    color: #fff; 
+    text-align: center;
+}
+
+.td2 {
+    background-color: #fe3939;
+    color: #fff; 
+    text-align: center;
+}
+
+/* CSS untuk halaman */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+}

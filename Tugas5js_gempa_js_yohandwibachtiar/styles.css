@@ -1,0 +1,35 @@
+body.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+.header {
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #444;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #555;
+}
+
+tr:nth-child(even) {
+    background-color: #666;
+}
+
+tr:nth-child(odd) {
+    background-color: #777;
+}

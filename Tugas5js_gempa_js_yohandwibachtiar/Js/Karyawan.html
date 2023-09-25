@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas JavaScript MSIB 5</title>
+</head>
+<body>
+    <h1>Data Pegawai</h1>
+    <p>Nama Pegawai: Ridwan</p>
+    <p>Jabatan: Manager</p>
+    <p>Status: Menikah</p>
+
+    <h2>Perhitungan Gaji</h2>
+    <script>
+        // Data Pegawai
+        var namaPegawai = "Ridwan";
+        var jabatan = "Manager";
+        var status = "Menikah";
+        var gajiPokok;
+
+        // Menghitung Gaji Pokok sesuai jabatan
+        if (jabatan === "Manager") {
+            gajiPokok = 15000000; // 15 juta
+        } else if (jabatan === "Asisten Manager") {
+            gajiPokok = 10000000; // 10 juta
+        } else if (jabatan === "Staff") {
+            gajiPokok = 5000000; // 5 juta
+        } else {
+            gajiPokok = 0;
+        }
+
+        // Menghitung Tunjangan Jabatan (15% dari gaji pokok)
+        var tunjanganJabatan = 0.15 * gajiPokok;
+
+        // Menghitung BPJS (10% dari gaji pokok)
+        var bpjs = 0.10 * gajiPokok;
+
+        // Menghitung Tunjangan Keluarga (20% dari gaji pokok jika menikah, 0% jika belum menikah)
+        var tunjanganKeluarga = (status === "Menikah") ? (0.20 * gajiPokok) : 0;
+
+        // Menghitung Total Gaji
+        var totalGaji = gajiPokok + tunjanganJabatan + bpjs + tunjanganKeluarga;
+
+        // Menampilkan hasil perhitungan
+        document.write("<p>Gaji Pokok: " + gajiPokok + " Rupiah</p>");
+        document.write("<p>Tunjangan Jabatan: " + tunjanganJabatan + " Rupiah</p>");
+        document.write("<p>BPJS: " + bpjs + " Rupiah</p>");
+        document.write("<p>Tunjangan Keluarga: " + tunjanganKeluarga + " Rupiah</p>");
+        document.write("<p>Total Gaji: " + totalGaji + " Rupiah</p>");
+    </script>
+</body>
+</html>

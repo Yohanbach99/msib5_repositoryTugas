@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas JavaScript 4 Yohan Dwi Bachtiar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Toko Online</h1>
+    <form id="tokoOnlineForm">
+        <label for="nama">Nama Pelanggan:</label>
+        <input type="text" id="nama" name="nama"><br><br>
+
+        <label for="produk">Produk:</label>
+        <select id="produk" name="produk">
+            <option value="TV">TV</option>
+            <option value="AC">AC</option>
+            <option value="Kulkas">Kulkas</option>
+        </select><br><br>
+
+        <label for="jumlah">Banyak Item Produk dibeli:</label>
+        <input type="number" id="jumlah" name="jumlah" min="1" value="1"><br><br>
+
+        <button type="button" id="proses" onclick="transaksi()">Beli</button>
+    </form>
+
+    <script>
+            function transaksi() {
+            // Mengambil nilai dari input
+            var nama = document.getElementById('nama').value;
+            var produk = document.getElementById('produk').value;
+            var jumlah = parseInt(document.getElementById('jumlah').value);
+
+            // Menghitung harga satuan berdasarkan produk yang dipilih
+            var hargaSatuan = 0;
+            switch (produk) {
+                case "TV":
+                    hargaSatuan = 2000000;
+                    break;
+                case "AC":
+                    hargaSatuan = 3000000;
+                    break;
+                case "Kulkas":
+                    hargaSatuan = 4000000;
+                    break;
+            }
+
+            // Menghitung harga kotor
+            var hargaKotor = hargaSatuan * jumlah;
+
+            // Menghitung diskon
+            var diskon = 0;
+            if (produk === "Kulkas" && jumlah >= 3) {
+                diskon = 0.3 * hargaKotor;
+            } else if (produk === "AC" && jumlah >= 3) {
+                diskon = 0.2 * hargaKotor;
+            } else {
+                diskon = 0.1 * hargaKotor;
+            }
+
+            // Menghitung PPN
+            var ppn = 0.1 * (hargaKotor - diskon);
+
+            // Menghitung harga bayar
+            var hargaBayar = (hargaKotor - diskon) + ppn;
+
+            // Menampilkan hasil sesuai dengan soal
+            alert("Nama Pelanggan: " + nama +
+                "\nProduk yang dibeli: " + produk +
+                "\nHarga Satuan: Rp " + hargaSatuan.toLocaleString() +
+                "\nJumlah Item Produk yang dibeli: " + jumlah +
+                "\nHarga Kotor: Rp " + hargaKotor.toLocaleString() +
+                "\nDiskon: Rp " + diskon.toLocaleString() +
+                "\nPPN: Rp " + ppn.toLocaleString() +
+                "\nHarga Bayar: Rp " + hargaBayar.toLocaleString());
+        }
+    </script>
+</body>
+</html>

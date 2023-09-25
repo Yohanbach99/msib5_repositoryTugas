@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        tr:nth-child(odd) {
+            background-color: yellow;
+        }
+
+        tr:nth-child(even) {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>Nama Pegawai</th>
+        <th>Jabatan</th>
+        <th>Gaji Kotor</th>
+        <th>Agama</th>
+        <th>Zakat Profesi</th>
+        <th>Take Home Pay</th>
+    </tr>
+    
+    <!-- Data Pegawai -->
+    <tr>
+        <td>Prof. Dr. Upin, S.T, M.T</td>
+        <td>Manager</td>
+        <td>15000000</td>
+        <td>Muslim</td>
+        <td id="zakat1"></td>
+        <td id="takeHomePay1"></td>
+    </tr>
+    <tr>
+        <td>Prof. Dr. Ipin, S.T, M.Sc</td>
+        <td>Manager</td>
+        <td>15000000</td>
+        <td>Muslim</td>
+        <td id="zakat2"></td>
+        <td id="takeHomePay2"></td>
+    </tr>
+    <tr>
+        <td>Tok Dalang, S.T, M.Eng</td>
+        <td>Asisten Manager</td>
+        <td>10000000</td>
+        <td>Muslim</td>
+        <td id="zakat3"></td>
+        <td id="takeHomePay3"></td>
+    </tr>
+    <tr>
+        <td>Mey-Mey,S.Ak</td>
+        <td>Asisten Manager</td>
+        <td>10000000</td>
+        <td>Non-Muslim</td>
+        <td id="zakat4"></td>
+        <td id="takeHomePay4"></td>
+    </tr>
+    <tr>
+        <td>Fizi,S.T</td>
+        <td>Asisten Manager</td>
+        <td>10000000</td>
+        <td>Muslim</td>
+        <td id="zakat5"></td>
+        <td id="takeHomePay5"></td>
+    </tr>
+    <tr>
+        <td>Ehsan, A.md, S.Kom</td>
+        <td>Supervisor</td>
+        <td>7000000</td>
+        <td>Non-Muslim</td>
+        <td id="zakat6"></td>
+        <td id="takeHomePay6"></td>
+    </tr>
+    <tr>
+        <td>Jarjit, A.md</td>
+        <td>Supervisor</td>
+        <td>7000000</td>
+        <td>Muslim</td>
+        <td id="zakat7"></td>
+        <td id="takeHomePay7"></td>
+    </tr>
+    <tr>
+        <td>Ijat, S.Kom</td>
+        <td>Supervisor</td>
+        <td>7000000</td>
+        <td>Non-Muslim</td>
+        <td id="zakat8"></td>
+        <td id="takeHomePay8"></td>
+    </tr>
+    <tr>
+        <td>Mail, S.Ak</td>
+        <td>Staff</td>
+        <td>4000000</td>
+        <td>Muslim</td>
+        <td id="zakat9"></td>
+        <td id="takeHomePay9"></td>
+    </tr>
+    <tr>
+        <td>Susanti, S.Ak</td>
+        <td>Staff</td>
+        <td>4000000</td>
+        <td>Non-Muslim</td>
+        <td id="zakat10"></td>
+        <td id="takeHomePay10"></td>
+    </tr>
+</table>
+
+<script>
+    // Fungsi untuk menghitung Zakat Profesi
+    function hitungZakat(gajiKotor, agama) {
+        return (agama === "Muslim" && gajiKotor >= 7000000) ? (gajiKotor * 0.025) : 0;
+    }
+
+    // Fungsi untuk menghitung Gapok berdasarkan jabatan
+    function hitungGapok(jabatan) {
+        switch (jabatan) {
+            case "Manager":
+                return 15000000;
+            case "Asisten Manager":
+                return 10000000;
+            case "Supervisor":
+                return 7000000;
+            case "Staff":
+                return 4000000;
+            default:
+                return 0;
+        }
+    }
+
+    // Fungsi untuk mengisi tabel dengan data pegawai
+    function isiTabel() {
+        var tabel = document.querySelector("table");
+        var rows = tabel.querySelectorAll("tr");
+        
+        for (var i = 1; i <= 10; i++) {
+            var row = rows[i];
+            var cells = row.querySelectorAll("td");
+
+            var namaPegawai = cells[0].textContent;
+            var jabatan = cells[1].textContent;
+            var gajiKotor = parseInt(cells[2].textContent);
+
+            // Menggunakan operator ternary untuk menentukan agama
+            var agama = (i % 2 === 1) ? "Muslim" : "Non-Muslim";
+
+            var gapok = hitungGapok(jabatan);
+            var zakatProfesi = hitungZakat(gajiKotor, agama);
+            var tunjanganJabatan = gapok * 0.2;
+            var tunjanganKesehatan = gapok * 0.1;
+            var gajiKotor = gapok + tunjanganJabatan + tunjanganKesehatan;
+            var takeHomePay = gajiKotor - zakatProfesi;
+
+            cells[2].textContent = gapok;
+            cells[3].textContent = agama; // Update kolom agama
+            cells[4].textContent = zakatProfesi;
+            cells[5].textContent = takeHomePay;
+        }
+    }
+
+    isiTabel(); // Panggil fungsi untuk mengisi tabel dengan data
+
+</script>
+
+</body>
+</html>

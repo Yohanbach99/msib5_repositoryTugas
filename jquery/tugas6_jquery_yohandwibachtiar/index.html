@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 6 Jquery </title>
+    <script src="jquery.js"></script>
+    <style>
+        body {
+            background-color: #222;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .content {
+            display: none;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pilihan : </h1>
+    <ul>
+        <li><a href="#" id="profile-link">Profil</a></li>
+        <li><a href="#" id="moto-link">Moto Hidup</a></li>
+        <li><a href="#" id="keahlian-link">Keahlian</a></li>
+    </ul>
+
+    <div class="content" id="profile-content">
+        <h2>Profil Pribadi</h2>
+        <p><a href="https://it-tech.yohanbachtiarr.repl.co/">Kunjungi Profil Saya</a></p>
+    </div>
+    
+
+    <div class="content" id="moto-content">
+        <h2>Moto Hidup</h2>
+        <p>Ngoding Aja Dulu, Jagonya Belakangan</p>
+    </div>
+
+    <div class="content" id="keahlian-content">
+        <h2>Keahlian dan Pengalaman</h2>
+        <p><a href="https://it-tech.yohanbachtiarr.repl.co/#INFORMATIKA">Tentang Saya</a></p>
+        
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            
+            $("#profile-link").click(function () {
+                $(".content").hide(); 
+                $("#profile-content").show(); 
+            });
+
+            
+            $("#moto-link").click(function () {
+                $(".content").hide(); 
+                $("#moto-content").show(); 
+            });
+
+            
+            $("#keahlian-link").click(function () {
+                $(".content").hide(); 
+                $("#keahlian-content").show(); 
+            });
+        });
+    </script>
+</body>
+</html>
