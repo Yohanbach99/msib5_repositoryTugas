@@ -2,33 +2,7 @@
 <html>
 <head>
     <title>Tugas Msib 5</title>
-    <style>
-    
-        table {
-            width: 80%;
-            margin: 20px auto;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-       
-        h1 {
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="asset/css/style.css">
 </head>
 <body>
     <h1>Data Mahasiswa</h1>
@@ -44,16 +18,16 @@
         <?php
         
         $mahasiswa = [
-            ["Mahasiswa 1", 75],
-            ["Mahasiswa 2", 90],
-            ["Mahasiswa 3", 55],
-            ["Mahasiswa 4", 80],
-            ["Mahasiswa 5", 65],
-            ["Mahasiswa 6", 70],
-            ["Mahasiswa 7", 88],
-            ["Mahasiswa 8", 95],
-            ["Mahasiswa 9", 63],
-            ["Mahasiswa 10", 72],
+            ["SANTI", 45],
+            ["MIRNA", 90],
+            ["WATI", 35],
+            ["MISDI", 60],
+            ["TUMIRAH", 45],
+            ["JANI", 70],
+            ["NONIRAN", 88],
+            ["MUKIYEM", 95],
+            ["NARTO", 63],
+            ["SINGO", 78],
         ];
 
         
