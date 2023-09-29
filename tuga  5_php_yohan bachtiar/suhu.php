@@ -71,7 +71,7 @@ class KonversiSuhu
     }
 }
 
-// Buat objek dataKonversiSuhu
+
 $dataKonversiSuhu = [
     new KonversiSuhu("Celcius", 30, "Fahrenheit"),
     new KonversiSuhu("Fahrenheit", 86, "Celcius"),
@@ -79,7 +79,7 @@ $dataKonversiSuhu = [
     new KonversiSuhu("Rheamur", 16, "Celcius"),
 ];
 
-// Panggil fungsi cetak untuk seluruh objek
+
 foreach ($dataKonversiSuhu as $konversi) {
     $konversi->cetak();
 }
