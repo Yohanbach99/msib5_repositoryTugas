@@ -5,9 +5,9 @@ require_once 'PersegiPanjang.php';
 require_once 'Segitiga.php';
 
 $bidang = [
-    new Lingkaran(7),
-    new PersegiPanjang(5, 10),
-    new Segitiga(6, 8)
+    new Lingkaran(8),
+    new PersegiPanjang(8, 15),
+    new Segitiga(8, 11)
 ];
 
 echo "<table border='1'>
