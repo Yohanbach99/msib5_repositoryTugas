@@ -77,13 +77,12 @@ button {
 
     <?php
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // Ambil data username dan password yang dikirimkan dari form
+      
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        // Contoh verifikasi sederhana
+       
         if ($username === 'admin' && $password === 'mimin') {
-            // Redirect ke halaman admin jika verifikasi berhasil
             header('Location: admin_dashboard.php');
             exit;
         } else {
