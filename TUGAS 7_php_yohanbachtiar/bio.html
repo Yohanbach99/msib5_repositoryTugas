@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        #profil-img {
+            max-width: 200px;
+            border-radius: 50%;
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BIODATA</h1>
+        <img src="yohan.jpg" alt="Foto Profil" id="profil-img">
+        <p>Nama: <span id="nama"></span></p>
+        <p>Umur: <span id="umur"></span></p>
+        <p>Alamat: <span id="alamat"></span></p>
+        <p> <span id="deskripsi"></span></p>
+    </div>
+
+    <script>
+        // Variabel JavaScript untuk data diri
+        var biodata = {
+            nama: "Yohan Dwi Bachtiar",
+            umur: 23,
+            alamat: "Jl. Wosi - Irman Jaya,Kab. Manokwari,Prov. Papua Barat",
+            deskripsi: "Saya Mahasiswa Teknik Informatika Universitas Papua, Menjadi Seorang Programer Adalah Impian Saya. Ngoding Aja Dulu Jagonya Belakangan."
+        };
+
+        // Mengisi elemen HTML dengan data dari variabel JavaScript
+        document.getElementById("nama").textContent = biodata.nama;
+        document.getElementById("umur").textContent = biodata.umur + " tahun";
+        document.getElementById("alamat").textContent = biodata.alamat;
+        document.getElementById("deskripsi").textContent = biodata.deskripsi;
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabel dengan Checkbox</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2; /* Warna latar belakang untuk baris genap */
+        }
+
+        tr:nth-child(odd) {
+            background-color: #ffffff; /* Warna latar belakang untuk baris ganjil */
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        th {
+        background-color: #9a9a9a;
+        }
+        .btn {
+            background-color: #4CAF50; 
+            color: white; 
+            padding: 12px 24px; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            transition: background-color 0.3s ease; 
+            font-size: 16px; 
+        }
+
+      
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Daftar Pengguna</legend>
+    </fieldset>
+    <table border="1">
+        <tr>
+            <th><input type="checkbox" name="checkbox1"> </th>
+            <th>User id</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="checkbox2"> </td>
+            <td>2</td>
+            <td>Check1</td>
+            <td>Check1@gmail.com</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="checkbox3"> </td>
+            <td>5</td>
+            <td>12345</td>
+            <td>kiniaku@gmail.com</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="checkbox4"> </td>
+            <td>6</td>
+            <td>tesmazeh</td>
+            <td>anu@gmail.com</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="checkbox5"> </td>
+            <td>7</td>
+            <td>masbro</td>
+            <td>masbro@gmail.com</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="checkbox6"> </td>
+            <td>8</td>
+            <td>mascueng</td>
+            <td>cuengk@gmail.com</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="checkbox7"> </td>
+            <td>9</td>
+            <td>mascagosss</td>
+            <td>99ags@gmail.com</td>
+        </tr>
+    </table>
+    <br><br>
+    <button class="btn">Delete User</button>
+</body>
+</html>
