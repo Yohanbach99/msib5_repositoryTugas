@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar HTML</title>
+    <style>
+        .custom-list {
+            list-style-type: none;
+            counter-reset: item;
+            padding-left: 0;
+        }
+
+        .custom-list li {
+            position: relative;
+            margin-bottom: 10px;
+            padding-left: 25px;
+        }
+
+        .custom-list li::before {
+            content: counter(item);
+            counter-increment: item;
+            position: absolute;
+            left: 15px;
+            color: #f71b1b;
+            font-weight: bold;
+        }
+        .bold-dot {
+        font-weight: bold;
+        font-size: 45px;
+    }
+    </style>
+</head>
+<body>
+    <h1>DAFTAR BAHASA PEMROGRAMAN</h1>
+    <ol class="custom-list"> <span class="bold-dot">.</span>PHP
+        <li>Belajar PHP</li>
+        <li>Mengenal PHP</li>
+        <li>Pengertian PHP</li>
+    </ol>
+
+    <ol class="custom-list"> <span class="bold-dot">.</span>CSS
+        <li>Belajar CSS</li>
+        <li>Mengenal CSS</li>
+        <li>Pengertian CSS</li>
+    </ol>
+
+    <ol class="custom-list"> <span class="bold-dot">.</span>Javascript
+        <li>Belajar Javascript</li>
+        <li>Mengenal Javascript</li>
+        <li>Pengertian Javascript</li>
+    </ol>
+
+    <ol class="custom-list"> <span class="bold-dot">.</span>Java
+        <li>Belajar Java</li>
+        <li>Mengenal Java</li>
+        <li>Pengertian Java</li>
+    </ol>
+
+    <ol class="custom-list"> <span class="bold-dot">.</span>C#
+        <li>Belajar C#</li>
+        <li>Mengenal C#</li>
+        <li>Pengertian C#</li>
+    </ol>
+</body>
+</html>
