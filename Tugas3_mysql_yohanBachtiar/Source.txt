@@ -1,0 +1,16 @@
+--Menambahkan Data Pelanggan--
+INSERT INTO `pelanggan` (`id`, `kode`, `nama`, `jk`, `tmp_lahir`, `tgl_lahir`, `email`, `kartu_id`) VALUES (NULL, 'C002', 'Mukidi', 'L', 'Solo', '2017-10-11', 'mukidi@gmail.com', ''), (NULL, 'C003', 'Jono', 'L', 'Yogyakarta', '2018-10-10', 'APW@gmail.com', ''), (NULL, 'C004', 'Suki', 'L', 'Konoha', '2014-10-08', 'Suki@gmail.com', ''), (NULL, 'C005', 'Suka', 'P', 'Malang', '2015-10-09', 'Suka@gmail.com', ''), (NULL, 'C006', 'Gumbrek', 'L', 'Jombang', '2013-10-02', 'Gumbrek@gmail.com', ''), (NULL, 'C007', 'Ponirah', 'P', 'Blitar', '2013-10-16', 'Ponirah@gmail.com', ''), (NULL, 'C008', 'Misni', 'L', 'Blitar', '2014-10-01', 'Misni@gmail.com', ''), (NULL, 'C009', 'Hana', 'P', 'Surabaya', '2016-10-03', 'Hana@gmail.com', ''), (NULL, 'C010', 'Hani', 'P', 'Surabaya', '2023-10-06', 'Hani@gmail.com', ''), (NULL, 'C011', 'Hono', 'L', 'Malang', '2023-11-10', 'Hono@gmail.com', ''), (NULL, 'C012', 'Hini', 'P', 'Surabaya', '2018-10-09', 'Hini@gmail.com', ''), (NULL, 'C013', 'Hunu', 'L', 'Malang', '2017-10-04', 'Hunu@gmail.com', ''), (NULL, 'C014', 'Hene', 'L', 'Malang', '2014-10-07', 'Hene@gmail.com', ''), (NULL, 'C015', 'Zilong', 'L', 'Moba', '2017-10-17', 'Zilong@gmail.com', ''), (NULL, 'C016', 'Hitler', 'L', 'Djakarta', '2014-10-08', 'Hitler@gmail.com', '');
+
+
+--Menambahkan Data Produk--
+INSERT INTO `produk` (`id`, `kode`, `nama`, `harga_beli`, `harga_jual`, `stok`, `min_stok`, `jenis_produk_id`) VALUES (NULL, 'TK01', 'Teh Kotak 100Ml', '1000', '1500', '8', '2', '4'), (NULL, 'TK02', 'Teh Kotak 500Ml', '5000', '6000', '80', '5', '4'), (NULL, 'KR01', 'Kursi Lipat', '80000', '90000', '100', '5', '2'), (NULL, 'MJ01', 'Meja 4x4', '85000', '90000', '100', '4', '2'), (NULL, 'SF01', 'SeaFood Cumi', '50000', '60000', '80', '5', '3'), (NULL, 'SF02', 'SeaFood Kepiting', '60000', '70000', '80', '5', '3'), (NULL, 'SF03', 'SeaFood Baby Crab', '40000', '50000', '80', '5', '3'), (NULL, 'A01', 'Ayam Potong Goreng', '8000', '9000', '2000', '5', '3'), (NULL, 'A02', 'Ayam Kampung Goreng', '8000', '10000', '50', '5', '3'), (NULL, 'A03', 'Ayam Horen Goreng', '9000', '10000', '60', '5', '3'), (NULL, 'HW01', 'Mouse Gamming', '90000', '110000', '50', '5', '5'), (NULL, 'HW02', 'Monitor 24 Inch Lexus', '6000000', '6500000', '50', '5', '5'), (NULL, 'HW03', 'Keyboard Gaming', '200000', '250000', '50', '3', '5'), (NULL, 'HW04', 'SSD 500Gb Mideaforce', '800000', '900000', '80', '5', '5'), (NULL, 'HW05', 'RAM 16BG DDR4 V-Genn', '600000', '650000', '60', '5', '5');
+
+
+--Menambahkan Tabel Vendor--
+ MySQL returned an empty result set (i.e. zero rows). (Query took 0.0007 seconds.)
+CREATE TABLE vendor( id int not null AUTO_INCREMENT PRIMARY KEY, nomor varchar(4), nama varchar(40), kota Varchar(30), kontak varchar(30));
+
+
+--Membuat Tabel Pembelian--
+ MySQL returned an empty result set (i.e. zero rows). (Query took 0.0006 seconds.)
+CREATE TABLE pembelian( id int not null AUTO_INCREMENT PRIMARY KEY, tanggal Varchar(45), nomor Varchar(10), produk_id int, jumlah int, harga double, vendor_id int);
