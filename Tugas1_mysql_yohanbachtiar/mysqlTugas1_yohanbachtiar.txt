@@ -1,0 +1,53 @@
+Microsoft Windows [Version 10.0.22621.2283]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Administrator>cd/
+
+C:\>cd/ xampp/
+The system cannot find the path specified.
+
+C:\>cd C:\xampp\mysql\bin
+
+C:\xampp\mysql\bin>mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.28-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> CREATE DATABASE dbpegawai;
+Query OK, 1 row affected (0.029 sec)
+
+MariaDB [(none)]> USE dbpegawai;
+Database changed
+MariaDB [dbpegawai]> CREATE TABLE pegawai (
+    ->     id INT PRIMARY KEY,
+    ->     nip CHAR(5) NOT NULL UNIQUE,
+    ->     nama VARCHAR(30) NOT NULL,
+    ->     gender ENUM('L', 'P') NOT NULL,
+    ->     umur INT NOT NULL,
+    ->     berat_badan FLOAT
+    -> );
+Query OK, 0 rows affected (0.532 sec)
+
+MariaDB [dbpegawai]> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| bengkel            |
+| dbpegawai          |
+| information_schema |
+| kel1               |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+8 rows in set (0.089 sec)
+
+MariaDB [dbpegawai]>
+
+

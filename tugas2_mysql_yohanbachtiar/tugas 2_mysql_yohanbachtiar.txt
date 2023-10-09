@@ -1,3 +1,80 @@
+
+C:\Users\Administrator>cd/
+
+C:\>cd C:\xampp\mysql\bin
+
+C:\xampp\mysql\bin>mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 104
+Server version: 10.4.27-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use database msib
+ERROR 1049 (42000): Unknown database 'database'
+MariaDB [(none)]> use msib
+Database changed
+
+MariaDB [msib]> CREATE TABLE `pembelian` (
+    ->   `id` int(11) NOT NULL AUTO_INCREMENT,
+    ->   `tanggal` date NOT NULL,
+    ->   `nomor` varchar(20) NOT NULL,
+    ->   `produk_id` int(11) NOT NULL,
+    ->   `jumlah` int(11) NOT NULL,
+    ->   `harga` double NOT NULL,
+    ->   `vendor_id` int(11) NOT NULL,
+    ->   PRIMARY KEY (`id`)
+    -> ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+Query OK, 0 rows affected (0.037 sec)
+
+MariaDB [msib]> ALTER TABLE `pembelian`
+    -> ADD CONSTRAINT `fk_pembelian_produk` FOREIGN KEY (`produk_id`) REFERENCES `produk` (`id`);
+Query OK, 0 rows affected (0.133 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [msib]> CREATE TABLE `vendor` (
+    ->   `id` int(11) NOT NULL AUTO_INCREMENT,
+    ->   `nomor` varchar(10) NOT NULL,
+    ->   `nama` varchar(50) NOT NULL,
+    ->   `kota` varchar(30) NOT NULL,
+    ->   `kontak` varchar(20) NOT NULL,
+    ->   PRIMARY KEY (`id`)
+    -> ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+Query OK, 0 rows affected (0.028 sec)
+
+MariaDB [msib]> ALTER TABLE `pembelian`
+    -> ADD CONSTRAINT `fk_pembelian_vendor` FOREIGN KEY (`vendor_id`) REFERENCES `vendor` (`id`);
+Query OK, 0 rows affected (0.115 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [msib]> INSERT INTO `vendor` (`nomor`, `nama`, `kota`, `kontak`) VALUES
+    -> (1, 'Vendor jabar', 'Jakarta', '081234567890'),
+    -> (2, 'Vendor jatim', 'Surabaya', '082345678901'),
+    -> (3, 'Vendor jabar', 'Bandung', '083456789012'),
+    -> (4, 'Vendor jateng', 'Semarang', '084567890123'),
+    -> (5, 'Vendor DIY', 'Yogyakarta', '085678901234');
+Query OK, 5 rows affected (0.006 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+INSERT INTO `produk` (`id`, `nama`, `harga`, `stok`, `idjenis`, `foto`) VALUES
+    (15, 'Mie Instan Rasa Ayam', 5000, 100, 3, 'mie.jpg'),
+    (16, 'Mineral Water 500ml', 3000, 200, 4, 'water.jpg'),
+    (17, 'Smartphone Galaxy S22', 8000000, 10, 1, 'phone.jpg'),
+    (14, 'Sofa Bed Premium', 1500000, 3, 2, 'sofa.jpg'),
+    (1, 'TV LCD', 4000000, 5, 1, 'tv.jpg');
+
+MariaDB [msib]> INSERT INTO `pembelian` (`tanggal`, `nomor`, `produk_id`, `jumlah`, `harga`, `vendor_id`) VALUES
+    ->     ('2023-10-06', 'P001', 1, 3, 1200000, 1),
+    ->     ('2023-10-06', 'P002', 14, 2, 800000, 2),
+    ->     ('2023-10-06', 'P003', 15, 5, 1500000, 3),
+    ->     ('2023-10-06', 'P004', 16, 4, 1600000, 4),
+    ->     ('2023-10-06', 'P005', 17, 1, 400000, 5);
+Query OK, 5 rows affected (0.006 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+=======
 Microsoft Windows [Version 10.0.22621.2283]
 (c) Microsoft Corporation. All rights reserved.
 
@@ -76,4 +153,5 @@ MariaDB [msib]> INSERT INTO `pembelian` (`tanggal`, `nomor`, `produk_id`, `jumla
 Query OK, 5 rows affected (0.006 sec)
 Records: 5  Duplicates: 0  Warnings: 0
 
+>>>>>>> ab4311a9fd5f32f870a04781d9f0584514c635fe
 MariaDB [msib]>
