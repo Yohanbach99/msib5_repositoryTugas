@@ -1,13 +1,13 @@
 <?php  
 
-$model =  new produk();
-$data_produk = $model->dataProduk();
+$model =  new kartu_pelanggan();
+$data_kartuPelanggan = $model->dataKartu();
 
 ?>
 
 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Produk</h1>
+                        <h1 class="mt-4">Kartu Pelanggan</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="index.php?url=dashboard">Dashboard</a></li>
                             <li class="breadcrumb-item active">Tables</li>
@@ -21,9 +21,8 @@ $data_produk = $model->dataProduk();
                         </div>
                         <div class="card mb-4">
                             <div class="card-header">
-                                <a href="index.php?url=produk_form">
-                                    <button class="btn btn-sm btn-primary">Tambah</button>
-                                </a>
+                                <i class="fas fa-table me-1"></i>
+                                DataTable Example
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
@@ -31,47 +30,29 @@ $data_produk = $model->dataProduk();
                                         <tr>
                                             <th>No</th>
                                             <th>Kode</th>
-                                            <th>Nama</th>
-                                            <th>Harga Beli</th>
-                                            <th>Harga Jual</th>
-                                            <th>Stok</th>
-                                            <th>Minimal Stok</th>
-                                            <th>Jenis Produk</th>
-                                            <th>Aksi</th>
+                                            <th>Nama Jenis Kartu</th>
+                                            <th>Diskon</th>
+                                            <th>Iuran</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>No</th>
                                             <th>Kode</th>
-                                            <th>Nama</th>
-                                            <th>Harga Beli</th>
-                                            <th>Harga Jual</th>
-                                            <th>Stok</th>
-                                            <th>Minimal Stok</th>
-                                            <th>Jenis Produk</th>
-                                            <th>Aksi</th>
+                                            <th>Nama Jenis Kartu</th>
+                                            <th>Diskon</th>
+                                            <th>Iuran</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         <?php $id = 1; ?>
-                                        <?php foreach ( $data_produk as $row ) : ?>
+                                        <?php foreach ( $data_kartuPelanggan as $row ) : ?>
                                         <tr>
                                             <td><?= $id; ?></td>
                                             <td><?= $row['kode']; ?></td>
                                             <td><?= $row['nama']; ?></td>
-                                            <td><?= $row['harga_beli']; ?></td>
-                                            <td><?= $row['harga_jual']; ?></td>
-                                            <td><?= $row['stok']; ?></td>
-                                            <td><?= $row['min_stok']; ?></td>
-                                            <td><?= $row['jenis']; ?></td>
-                                            <td>
-                                                <form>
-                                                    <a href="index.php?url=produk_details&id=<?= $row['id'] ?>">
-                                                        <button type="button" class="btn btn-info btn-sm">Details</button>
-                                                    </a>
-                                                </form>
-                                            </td>
+                                            <td><?= $row['diskon']; ?></td>
+                                            <td><?= $row['iuran']; ?></td>
                                         </tr>
                                         <?php $id++; ?>
 		                                <?php endforeach; ?>

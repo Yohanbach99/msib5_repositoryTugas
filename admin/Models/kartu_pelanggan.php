@@ -1,15 +1,15 @@
 <?php  
 
-class jenis_produk{
+class kartu_pelanggan{
     private $koneksi;
     public function __construct() {
         global $dbh;
         $this->koneksi = $dbh;
     }
 
-    public function dataJenis() {
+    public function dataKartu() {
         // mengambil dan melihat table jenis_produk
-        $sql = "SELECT * FROM jenis_produk";
+        $sql = "SELECT * FROM kartu";
 
         // menggunakan mekanisme prepere statement PDO
         $ps = $this->koneksi->prepare($sql);
@@ -17,13 +17,6 @@ class jenis_produk{
         $rs = $ps->fetchALL();
 
         return $rs;
-    }
-
-    public function save($data) {
-        $sql = "INSERT INTO jenis_produk (nama) VALUES (?)";
-
-        $ps = $this->koneksi->prepare($sql);
-        $ps->execute($data);
     }
 }
 

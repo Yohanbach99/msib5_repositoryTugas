@@ -1,4 +1,4 @@
-        <div id="layoutSidenav">
+<div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
@@ -9,16 +9,17 @@
                                 Dashboard
                             </a>
                             <div class="sb-sidenav-menu-heading">Interface</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            <a class="nav-link collapsed"  href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts " >
+                                <div class="sb-nav-link-icon" ><i class="fas fa-columns" ></i></div>
                                 Master Data
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="index.php?url=jenisProduk">Jenis Produk</a>
-                                    <a class="nav-link" href="index.php?url=kartuPelanggan">Kartu Pelanggan</a>
-                                    <a class="nav-link" href="index.php?url=produk">Produk</a>
+                                <a class="nav-link" href="index.php?url=produk">Produk</a>
+                                    <a class="nav-link" href="index.php?url=jenis_produk">Jenis data</a>
+                                    <a class="nav-link" href="index.php?url=kartu">Kartu Pelanggan</a>
+                                    <a class="nav-link" href="index.php?url=pembelian">Pembelian</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -28,18 +29,18 @@
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                    <a class="nav-link collapsed disabled" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
                                         Authentication
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="login.html">Login</a>
+                                            <a class="nav-link" href="login.php">Login</a>
                                             <a class="nav-link" href="register.html">Register</a>
                                             <a class="nav-link" href="password.html">Forgot Password</a>
                                         </nav>
                                     </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                    <a class="nav-link collapsed disabled" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
                                         Error
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
@@ -51,13 +52,27 @@
                                         </nav>
                                     </div>
                                 </nav>
+                                
                             </div>
+                            <a class="nav-link" href="index.php?url=About ">
+                            <div class="sb-nav-link-icon"><i class="bi bi-person-fill fa-lg "></i></div>
+                                        About
+                            </a>
+                            <a class="nav-link" href="index.php?url=Contact">
+                            <div class="sb-nav-link-icon"><i class="bi bi-person-rolodex fa-lg "></i></div>
+                            Contact
+                            </a>
+                            <a class="nav-link" href="Login.php">
+                            <div class="sb-nav-link-icon"><i class="bi bi-box-arrow-in-right fa-lg "></i></div>
+                                        Login
+                            </a>
+
                             <div class="sb-sidenav-menu-heading">Addons</div>
                             <a class="nav-link" href="charts.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Charts
                             </a>
-                            <a class="nav-link" href="tables.html">
+                            <a class="nav-link" href="index.php?url=DataTable">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables
                             </a>
@@ -65,7 +80,7 @@
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        Admin
+                        Start Bootstrap
                     </div>
                 </nav>
             </div>

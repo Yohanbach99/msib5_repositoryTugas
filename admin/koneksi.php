@@ -1,14 +1,17 @@
-<?php
-$dsn = 'mysql:dbname=bdpos2;host=localhost';
+<?php  
+
+$dsn = 'mysql:dbname=dbpos;host=localhost';
 $user = 'root';
 $password = '';
 
 try {
-    $dbh = new PDO ($dsn, $user, $password);
+    $dbh = new PDO($dsn, $user, $password);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // echo "Sukses Koneksi : ".$user;
-} catch (PDOexeption $e){
-    echo 'Koneksi Gagal '.$e->getMessage();
+
+    // echo'Sukses Koneksi ' . $user;
+
+} catch (PDOException $e) {
+    echo 'Koneksi Gagal'. $e->getMessage();
 }
 
 ?>
